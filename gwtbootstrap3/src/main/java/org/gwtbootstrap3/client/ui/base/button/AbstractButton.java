@@ -73,16 +73,44 @@ import com.google.gwt.user.client.ui.Widget;
 public abstract class AbstractButton extends ComplexWidget implements HasEnabled, HasActive, HasType<ButtonType>,
         HasSize<ButtonSize>, HasDataTarget, HasClickHandlers, Focusable, HasAllMouseHandlers {
 
-    public class ButtonStateHandler {
-        private ButtonStateHandler() {
+    public static final class ButtonStateHandler {
+
+        private AbstractButton button;
+        private String text;
+        private boolean loading;
+
+        private ButtonStateHandler(final AbstractButton button) {
+            this.button = button;
         }
 
         public void loading() {
-            button(getElement(), "loading");
+            if (loading) return;
+
+            if (button instanceof HasText) {
+                button.setEnabled(false);
+                text = ((HasText) button).getText();
+                String dataLoadingText = button.getElement().getAttribute(Attributes.DATA_LOADING_TEXT);
+                ((HasText) button).setText(dataLoadingText);
+            } else {
+                button.button(button.getElement(), "loading");
+            }
+
+            loading = true;
         }
 
         public void reset() {
-            button(getElement(), "reset");
+            if (!loading) return;
+
+            if (button instanceof HasText) {
+                if (text != null) {
+                    ((HasText) button).setText(text);
+                }
+                button.setEnabled(true);
+            } else {
+                button.button(button.getElement(), "reset");
+            }
+
+            loading = false;
         }
 
         /**
@@ -91,11 +119,19 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
          * @param state Text state
          */
         public void reset(final String state) {
-            button(getElement(), state);
+            if (!loading) return;
+
+            if (button instanceof HasText) {
+                reset();
+            } else {
+                button.button(button.getElement(), state);
+            }
+
+            loading = false;
         }
     }
 
-    private final ButtonStateHandler buttonStateHandler = new ButtonStateHandler();
+    private final ButtonStateHandler buttonStateHandler = new ButtonStateHandler(this);
     private final DataTargetMixin<AbstractButton> targetMixin = new DataTargetMixin<AbstractButton>(this);
     private final ActiveMixin<AbstractButton> activeMixin = new ActiveMixin<AbstractButton>(this);
     private final FocusableMixin<AbstractButton> focusableMixin = new FocusableMixin<AbstractButton>(this);
