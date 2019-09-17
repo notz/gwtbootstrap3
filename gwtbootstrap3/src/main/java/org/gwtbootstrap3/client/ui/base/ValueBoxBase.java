@@ -80,12 +80,12 @@ public class ValueBoxBase<T> extends com.google.gwt.user.client.ui.ValueBoxBase<
     }
 
     @Override
-    public void setAutoComplete(final boolean autoComplete) {
-        getElement().setAttribute(AUTO_COMPLETE, autoComplete ? ON : OFF);
+    public void setAutocomplete(final String autocomplete) {
+        getElement().setAttribute(AUTO_COMPLETE, autocomplete);
     }
 
     @Override
-    public String getAutoComplete() {
+    public String getAutocomplete() {
         return getElement().getAttribute(AUTO_COMPLETE);
     }
 
