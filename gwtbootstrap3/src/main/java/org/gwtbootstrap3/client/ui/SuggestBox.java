@@ -228,7 +228,7 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
 
     /** {@inheritDoc} */
     @Override
-    public String getAutoComplete() {
+    public String getAutocomplete() {
         return getElement().getAttribute(AUTO_COMPLETE);
     }
 
@@ -315,8 +315,8 @@ public class SuggestBox extends com.google.gwt.user.client.ui.SuggestBox impleme
 
     /** {@inheritDoc} */
     @Override
-    public void setAutoComplete(final boolean autoComplete) {
-        getElement().setAttribute(AUTO_COMPLETE, autoComplete ? ON : OFF);
+    public void setAutocomplete(final String autocomplete) {
+        getElement().setAttribute(AUTO_COMPLETE, autocomplete);
     }
 
     /** {@inheritDoc} */
