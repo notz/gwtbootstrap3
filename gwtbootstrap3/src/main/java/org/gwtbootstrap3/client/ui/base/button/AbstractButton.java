@@ -62,6 +62,7 @@ import com.google.gwt.event.dom.client.MouseWheelHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.ui.Focusable;
 import com.google.gwt.user.client.ui.HasEnabled;
+import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.Widget;
 
 /**
@@ -96,6 +97,15 @@ public abstract class AbstractButton extends ComplexWidget implements HasEnabled
             }
 
             loading = true;
+        }
+
+        /**
+         * Gives the loading state.
+         *
+         * @return the loading state
+         */
+        public boolean isLoading() {
+            return loading;
         }
 
         public void reset() {
