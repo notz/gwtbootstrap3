@@ -22,8 +22,7 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
-        server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
-        settings-path: ${{ github.workspace }} # location for the settings.xml file
+        server-id: github
 
     - if: github.event.release
       name: Update version in pom.xml (Release only)
@@ -33,6 +32,6 @@ jobs:
       run: mvn -B package --file pom.xml
 
     - name: Publish to GitHub Packages Apache Maven
-      run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+      run: mvn deploy
       env:
         GITHUB_TOKEN: ${{ github.token }}
