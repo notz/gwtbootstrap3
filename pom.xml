@@ -369,4 +369,12 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub notz Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/notz/gwtbootstrap3</url>
+        </repository>
+    </distributionManagement>
 </project>
