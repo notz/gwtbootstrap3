@@ -22,7 +22,6 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
-        server-id: github
 
     - if: github.event.release
       name: Update version in pom.xml (Release only)
