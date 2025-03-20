@@ -20,6 +20,8 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.user.client.ui.Widget;
 import org.gwtbootstrap3.client.ui.base.HasFormValue;
 import org.gwtbootstrap3.client.ui.base.HasId;
 import org.gwtbootstrap3.client.ui.base.HasPull;
@@ -30,10 +32,7 @@ import org.gwtbootstrap3.client.ui.base.mixin.IdMixin;
 import org.gwtbootstrap3.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
-import org.gwtbootstrap3.client.ui.gwt.Widget;
-import org.gwtbootstrap3.client.ui.impl.SimpleRadioButtonImpl;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.InputElement;
@@ -49,8 +48,6 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadioButton implements HasResponsiveness,
         HasId, HasPull, HasFormValue, HasChangeHandlers {
-
-    private static final SimpleRadioButtonImpl impl = GWT.create(SimpleRadioButtonImpl.class);
 
     /**
      * Creates a SimpleRadioButton widget that wraps an existing &lt;input
@@ -173,7 +170,8 @@ public class SimpleRadioButton extends com.google.gwt.user.client.ui.SimpleRadio
 
     @Override
     protected void ensureDomEventHandlers() {
-        impl.ensureDomEventHandlers(this);
+        addChangeHandler(event -> ValueChangeEvent.fire(SimpleRadioButton.this,
+                getValue()));
     }
 
 }
