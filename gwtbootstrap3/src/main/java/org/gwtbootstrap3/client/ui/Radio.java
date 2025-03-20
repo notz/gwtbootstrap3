@@ -20,10 +20,9 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import com.google.gwt.user.client.Event;
 import org.gwtbootstrap3.client.ui.constants.Styles;
-import org.gwtbootstrap3.client.ui.impl.RadioImpl;
 
-import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.InputElement;
@@ -55,8 +54,6 @@ import com.google.gwt.user.client.DOM;
  */
 public class Radio extends CheckBox {
 
-    private static final RadioImpl impl = GWT.create(RadioImpl.class);
-
     /**
      * Creates a new radio associated with a particular group, and initialized
      * with the given HTML label. All radio buttons associated with the same
@@ -75,7 +72,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see RadioButton(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -92,7 +89,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see RadioButton(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -100,8 +97,7 @@ public class Radio extends CheckBox {
      *            this radio button's html label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public Radio(String name, SafeHtml label, DirectionEstimator directionEstimator) {
         this(name);
@@ -128,7 +124,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see RadioButton(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -145,7 +141,7 @@ public class Radio extends CheckBox {
     }
 
     /**
-     * @see #RadioButton(String, SafeHtml)
+     * @see RadioButton(String, SafeHtml)
      * 
      * @param name
      *            the group name with which to associate the radio button
@@ -153,8 +149,7 @@ public class Radio extends CheckBox {
      *            this radio button's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public Radio(String name, String label, DirectionEstimator directionEstimator) {
         this(name);
@@ -233,14 +228,10 @@ public class Radio extends CheckBox {
     }
 
     @Override
-    protected void ensureDomEventHandlers() {
-        impl.ensureDomEventHandlers(this);
-    }
-
-    @Override
     public void sinkEvents(int eventBitsToAdd) {
         if (isOrWasAttached()) {
-            impl.sinkEvents(eventBitsToAdd, inputElem, labelElem);
+            Event.sinkEvents(inputElem,
+                    eventBitsToAdd | Event.getEventsSunk(inputElem));
         } else {
             super.sinkEvents(eventBitsToAdd);
         }

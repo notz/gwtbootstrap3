@@ -25,9 +25,7 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.gwt.ButtonBase;
 import org.gwtbootstrap3.client.ui.gwt.FormPanel;
 import org.gwtbootstrap3.client.ui.gwt.Widget;
-import org.gwtbootstrap3.client.ui.impl.CheckBoxImpl;
 
-import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.InputElement;
@@ -72,8 +70,6 @@ import com.google.gwt.user.client.ui.UIObject;
 public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, HasWordWrap, HasDirectionalSafeHtml,
         HasDirectionEstimator, IsEditor<LeafValueEditor<Boolean>>, HasFormValue, HasChangeHandlers {
 
-    private static final CheckBoxImpl impl = GWT.create(CheckBoxImpl.class);
-
     protected final SpanElement labelElem = Document.get().createSpanElement();
     protected final InputElement inputElem;
 
@@ -115,8 +111,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
      *            the check box's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment
      */
     public CheckBox(SafeHtml label, DirectionEstimator directionEstimator) {
         this();
@@ -158,8 +153,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
      *            the check box's label
      * @param directionEstimator
      *            A DirectionEstimator object used for automatic direction
-     *            adjustment. For convenience,
-     *            {@link #DEFAULT_DIRECTION_ESTIMATOR} can be used.
+     *            adjustment.
      */
     public CheckBox(String label, DirectionEstimator directionEstimator) {
         this();
@@ -467,7 +461,7 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
     }
 
     protected void ensureDomEventHandlers() {
-        impl.ensureDomEventHandlers(this);
+        addChangeHandler(event -> ValueChangeEvent.fire(CheckBox.this, getValue()));
     }
 
     /**

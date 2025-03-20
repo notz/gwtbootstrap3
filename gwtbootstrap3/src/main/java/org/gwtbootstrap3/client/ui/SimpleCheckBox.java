@@ -20,6 +20,8 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.user.client.ui.Widget;
 import org.gwtbootstrap3.client.ui.base.HasFormValue;
 import org.gwtbootstrap3.client.ui.base.HasId;
 import org.gwtbootstrap3.client.ui.base.HasPull;
@@ -30,10 +32,7 @@ import org.gwtbootstrap3.client.ui.base.mixin.IdMixin;
 import org.gwtbootstrap3.client.ui.base.mixin.PullMixin;
 import org.gwtbootstrap3.client.ui.constants.DeviceSize;
 import org.gwtbootstrap3.client.ui.constants.Pull;
-import org.gwtbootstrap3.client.ui.gwt.Widget;
-import org.gwtbootstrap3.client.ui.impl.SimpleCheckBoxImpl;
 
-import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.InputElement;
@@ -48,8 +47,6 @@ import com.google.gwt.user.client.ui.RootPanel;
  */
 public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox implements HasResponsiveness, HasId,
         HasPull, HasFormValue, HasChangeHandlers {
-
-    private static final SimpleCheckBoxImpl impl = GWT.create(SimpleCheckBoxImpl.class);
 
     /**
      * Creates a SimpleCheckBox widget that wraps an existing &lt;input
@@ -163,7 +160,7 @@ public class SimpleCheckBox extends com.google.gwt.user.client.ui.SimpleCheckBox
 
     @Override
     protected void ensureDomEventHandlers() {
-        impl.ensureDomEventHandlers(this);
+        addChangeHandler(event -> ValueChangeEvent.fire(SimpleCheckBox.this, getValue()));
     }
 
 }
