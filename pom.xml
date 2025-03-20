@@ -86,7 +86,7 @@
         <nexus-staging-maven-plugin.version>1.6.6</nexus-staging-maven-plugin.version>
 
         <gwt.version>2.12.2</gwt.version>
-        <junit.version>4.12</junit.version>
+        <junit.version>4.13.2</junit.version>
     </properties>
 
     <build>
