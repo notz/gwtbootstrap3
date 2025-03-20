@@ -15,7 +15,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.google.gwt</groupId>
+            <groupId>org.gwtproject</groupId>
             <artifactId>gwt-user</artifactId>
             <version>${gwt.version}</version>
             <scope>provided</scope>
@@ -31,10 +31,11 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
+                <groupId>net.ltgt.gwt.maven</groupId>
                 <artifactId>gwt-maven-plugin</artifactId>
                 <configuration>
-                    <validateOnly>true</validateOnly>
+                    <moduleName>org.gwtbootstrap3.GwtBootstrap3</moduleName>
+                    <moduleShortName>GwtBootstrap3</moduleShortName>
                 </configuration>
             </plugin>
             <plugin>
