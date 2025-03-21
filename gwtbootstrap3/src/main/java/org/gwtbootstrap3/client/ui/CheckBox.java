@@ -21,6 +21,7 @@ package org.gwtbootstrap3.client.ui;
  */
 
 import org.gwtbootstrap3.client.ui.base.HasFormValue;
+import org.gwtbootstrap3.client.ui.base.HasRequired;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 import org.gwtbootstrap3.client.ui.gwt.ButtonBase;
 import org.gwtbootstrap3.client.ui.gwt.FormPanel;
@@ -68,7 +69,7 @@ import com.google.gwt.user.client.ui.UIObject;
  * </p>
  */
 public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, HasWordWrap, HasDirectionalSafeHtml,
-        HasDirectionEstimator, IsEditor<LeafValueEditor<Boolean>>, HasFormValue, HasChangeHandlers {
+        HasDirectionEstimator, IsEditor<LeafValueEditor<Boolean>>, HasFormValue, HasChangeHandlers, HasRequired {
 
     protected final SpanElement labelElem = Document.get().createSpanElement();
     protected final InputElement inputElem;
@@ -502,4 +503,17 @@ public class CheckBox extends ButtonBase implements HasName, HasValue<Boolean>, 
         setValue(getValue());
     }
 
+    @Override
+    public void setRequired(boolean required) {
+        if (required) {
+            inputElem.setAttribute(HasRequired.REQUIRED, HasRequired.REQUIRED);
+        } else {
+            inputElem.removeAttribute(HasRequired.REQUIRED);
+        }
+    }
+
+    @Override
+    public boolean getRequired() {
+        return inputElem.hasAttribute(HasRequired.REQUIRED);
+    }
 }
