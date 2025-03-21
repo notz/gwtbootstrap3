@@ -227,7 +227,7 @@ public abstract class AbstractForm extends FormElementContainer implements FormP
     private Element synthesizedFrame;
 
     public AbstractForm() {
-        this(true);
+        this(false);
     }
 
     public AbstractForm(boolean createIFrame) {
