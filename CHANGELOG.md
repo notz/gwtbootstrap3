@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/notz/gwtbootstrap3/compare/v1.1.0...v1.1.1) (2025-04-04)
+
+
+### Bug Fixes
+
+* Set correct aria roles & disable keyboard focus on nav tabs ([30626ab](https://github.com/notz/gwtbootstrap3/commit/30626abf1772c437c308c56c17daafadcc6ca2d8))
+
 ## [1.1.0](https://github.com/notz/gwtbootstrap3/compare/1.0.1...v1.1.0) (2025-03-28)
 
 
