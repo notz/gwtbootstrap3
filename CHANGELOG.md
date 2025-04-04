@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/notz/gwtbootstrap3/compare/v1.1.3...v1.1.4) (2025-04-04)
+
+
+### Bug Fixes
+
+* Remove sonatype deploy plugin ([5a39006](https://github.com/notz/gwtbootstrap3/commit/5a39006efc491a5d1b13632aa06036da600777ac))
+
 ## [1.1.3](https://github.com/notz/gwtbootstrap3/compare/v1.1.2...v1.1.3) (2025-04-04)
 
 
