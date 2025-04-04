@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/notz/gwtbootstrap3/compare/v1.1.2...v1.1.3) (2025-04-04)
+
+
+### Bug Fixes
+
+* Cleanup pom file for github release ([df50ad9](https://github.com/notz/gwtbootstrap3/commit/df50ad9e8ed07f112dd182232d6fe355e2734f55))
+
 ## [1.1.2](https://github.com/notz/gwtbootstrap3/compare/v1.1.1...v1.1.2) (2025-04-04)
 
 
