@@ -2,8 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- See description of deployment process at http://central.sonatype.org/pages/ossrh-guide.html -->
-
     <groupId>org.gwtbootstrap3</groupId>
     <artifactId>gwtbootstrap3-parent</artifactId>
     <packaging>pom</packaging>
@@ -15,13 +13,6 @@
     <prerequisites>
         <maven>3.8.1</maven>
     </prerequisites>
-
-    <scm>
-        <connection>scm:git:git@github.com:gwtbootstrap3/gwtbootstrap3.git</connection>
-        <developerConnection>scm:git:git@github.com:gwtbootstrap3/gwtbootstrap3.git</developerConnection>
-        <url>git@github.com:gwtbootstrap3/gwtbootstrap3.git</url>
-        <tag>HEAD</tag>
-    </scm>
 
     <licenses>
         <license>
@@ -302,45 +293,6 @@
             </build>
         </profile>
     </profiles>
-
-    <repositories>
-        <repository>
-            <id>sonatype-nexus</id>
-            <name>Sonatype Nexus</name>
-            <url>http://repository.sonatype.org/content/groups/public/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <!-- Required for CI to fetch the latest snapshot releases of gwtbootstrap3 -->
-        <repository>
-            <id>sonatype-nexus-snapshots</id>
-            <url>http://oss.sonatype.org/content/repositories/snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>false</enabled>
-            </releases>
-        </repository>
-    </repositories>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-nexus-plugins</id>
-            <url>http://repository.sonatype.org/content/groups/public/</url>
-            <name>Sonatype Nexus Plugins</name>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
     <distributionManagement>
         <repository>
