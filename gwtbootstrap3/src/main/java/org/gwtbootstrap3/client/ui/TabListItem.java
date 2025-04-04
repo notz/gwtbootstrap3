@@ -20,6 +20,7 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import com.google.gwt.aria.client.Roles;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.shared.HandlerRegistration;
 import com.google.gwt.user.client.Event;
@@ -73,6 +74,9 @@ public class TabListItem extends AnchorListItem implements HasDataTarget {
     public TabListItem(final String text) {
         super(text);
         setDataToggle(Toggle.TAB);
+
+        Roles.getPresentationRole().set(getElement());
+        Roles.getTabRole().set(anchor.getElement());
     }
 
     public TabListItem(final String text, final IconType iconType) {
