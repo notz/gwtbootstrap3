@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/notz/gwtbootstrap3/compare/v1.1.1...v1.1.2) (2025-04-04)
+
+
+### Bug Fixes
+
+* Remove obsolete cache manifest ([3346d09](https://github.com/notz/gwtbootstrap3/commit/3346d0900916ba121b2eb3a4e3a1941576fd4b99))
+
 ## [1.1.1](https://github.com/notz/gwtbootstrap3/compare/v1.1.0...v1.1.1) (2025-04-04)
 
 
