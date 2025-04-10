@@ -20,7 +20,10 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import org.gwtbootstrap3.client.ui.base.HasAutoComplete;
 import org.gwtbootstrap3.client.ui.base.HasId;
+import org.gwtbootstrap3.client.ui.base.HasRequired;
+import org.gwtbootstrap3.client.ui.base.mixin.AttributeMixin;
 import org.gwtbootstrap3.client.ui.base.mixin.IdMixin;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
@@ -30,9 +33,10 @@ import org.gwtbootstrap3.client.ui.constants.Styles;
  * @author Sven Jacobs
  * @see com.google.gwt.user.client.ui.ListBox
  */
-public class ListBox extends com.google.gwt.user.client.ui.ListBox implements HasId {
+public class ListBox extends com.google.gwt.user.client.ui.ListBox implements HasId, HasAutoComplete, HasRequired {
 
     private final IdMixin<ListBox> idMixin = new IdMixin<ListBox>(this);
+    private final AttributeMixin<ListBox> attrMixin = new AttributeMixin<>(this);
 
     /**
      * Creates an empty list box in single selection mode.
@@ -63,5 +67,29 @@ public class ListBox extends com.google.gwt.user.client.ui.ListBox implements Ha
     @Override
     public String getId() {
         return idMixin.getId();
+    }
+
+    @Override
+    public void setAutocomplete(final String autocomplete) {
+        attrMixin.setAttribute(AUTO_COMPLETE, autocomplete);
+    }
+
+    @Override
+    public String getAutocomplete() {
+        return attrMixin.getAttribute(AUTO_COMPLETE);
+    }
+
+    @Override
+    public void setRequired(final boolean required) {
+        if (required) {
+            attrMixin.setAttribute(HasRequired.REQUIRED, HasRequired.REQUIRED);
+        } else {
+            attrMixin.removeAttribute(HasRequired.REQUIRED);
+        }
+    }
+
+    @Override
+    public boolean getRequired() {
+        return attrMixin.getAttribute(REQUIRED) != null;
     }
 }
