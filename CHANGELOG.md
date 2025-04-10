@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.5](https://github.com/notz/gwtbootstrap3/compare/v1.1.4...v1.1.5) (2025-04-10)
+
+
+### Bug Fixes
+
+* Add auto complete & required to list box ([#24](https://github.com/notz/gwtbootstrap3/issues/24)) ([8f2f41a](https://github.com/notz/gwtbootstrap3/commit/8f2f41a7f3e2d8cd32f1ac5111b2d683fd60e71a))
+* **deps:** bump org.apache.maven.plugins:maven-compiler-plugin ([#23](https://github.com/notz/gwtbootstrap3/issues/23)) ([e5c0aec](https://github.com/notz/gwtbootstrap3/commit/e5c0aec7e99cfb5078b5602a455d33ed694c7c10))
+* **deps:** bump org.apache.maven.plugins:maven-gpg-plugin ([#22](https://github.com/notz/gwtbootstrap3/issues/22)) ([7cd3b42](https://github.com/notz/gwtbootstrap3/commit/7cd3b420b59bd6fd4e66e5dacc8b307bafee34df))
+* **deps:** bump org.apache.maven.plugins:maven-javadoc-plugin ([#20](https://github.com/notz/gwtbootstrap3/issues/20)) ([cdae36a](https://github.com/notz/gwtbootstrap3/commit/cdae36adba37c379ba549641b152b8e44876ce06))
+* **deps:** bump org.apache.maven.plugins:maven-surefire-plugin ([#21](https://github.com/notz/gwtbootstrap3/issues/21)) ([0df48b5](https://github.com/notz/gwtbootstrap3/commit/0df48b5040ae382d5c930fceb628d4264ebe722a))
+
 ## [1.1.4](https://github.com/notz/gwtbootstrap3/compare/v1.1.3...v1.1.4) (2025-04-04)
 
 
