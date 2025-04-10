@@ -22,11 +22,9 @@ package org.gwtbootstrap3.client.ui;
 
 import java.util.List;
 
-import org.gwtbootstrap3.client.ui.base.HasId;
-import org.gwtbootstrap3.client.ui.base.HasPlaceholder;
-import org.gwtbootstrap3.client.ui.base.HasResponsiveness;
-import org.gwtbootstrap3.client.ui.base.HasSize;
+import org.gwtbootstrap3.client.ui.base.*;
 import org.gwtbootstrap3.client.ui.base.helper.StyleHelper;
+import org.gwtbootstrap3.client.ui.base.mixin.AttributeMixin;
 import org.gwtbootstrap3.client.ui.base.mixin.BlankValidatorMixin;
 import org.gwtbootstrap3.client.ui.base.mixin.ErrorHandlerMixin;
 import org.gwtbootstrap3.client.ui.base.mixin.IdMixin;
@@ -61,10 +59,11 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
  *            the value type
  */
 public class ValueListBox<T> extends com.google.gwt.user.client.ui.ValueListBox<T> implements HasName, HasId,
-        HasResponsiveness, HasPlaceholder, HasSize<InputSize>, HasEditorErrors<T>, HasErrorHandler, HasValidators<T>,
+        HasAutoComplete, HasRequired, HasResponsiveness, HasPlaceholder, HasSize<InputSize>, HasEditorErrors<T>, HasErrorHandler, HasValidators<T>,
         HasBlankValidator<T> {
 
     private final IdMixin<ValueListBox<T>> idMixin = new IdMixin<ValueListBox<T>>(this);
+    private final AttributeMixin<ValueListBox<T>> attrMixin = new AttributeMixin<>(this);
 
     private final ErrorHandlerMixin<T> errorHandlerMixin = new ErrorHandlerMixin<T>(this);
 
@@ -107,6 +106,30 @@ public class ValueListBox<T> extends com.google.gwt.user.client.ui.ValueListBox<
     @Override
     public String getId() {
         return idMixin.getId();
+    }
+
+    @Override
+    public void setAutocomplete(final String autocomplete) {
+        attrMixin.setAttribute(AUTO_COMPLETE, autocomplete);
+    }
+
+    @Override
+    public String getAutocomplete() {
+        return attrMixin.getAttribute(AUTO_COMPLETE);
+    }
+
+    @Override
+    public void setRequired(final boolean required) {
+        if (required) {
+            attrMixin.setAttribute(HasRequired.REQUIRED, HasRequired.REQUIRED);
+        } else {
+            attrMixin.removeAttribute(HasRequired.REQUIRED);
+        }
+    }
+
+    @Override
+    public boolean getRequired() {
+        return attrMixin.getAttribute(REQUIRED) != null;
     }
 
     /** {@inheritDoc} */
