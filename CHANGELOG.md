@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.6](https://github.com/notz/gwtbootstrap3/compare/v1.1.5...v1.1.6) (2025-04-17)
+
+
+### Bug Fixes
+
+* Initially hide tab list item from keyboard focus ([#27](https://github.com/notz/gwtbootstrap3/issues/27)) ([e28db7e](https://github.com/notz/gwtbootstrap3/commit/e28db7e3bd956fcd419a89f2160632df2fc19b4d))
+
 ## [1.1.5](https://github.com/notz/gwtbootstrap3/compare/v1.1.4...v1.1.5) (2025-04-10)
 
 
