@@ -74,6 +74,8 @@ public class TabListItem extends AnchorListItem implements HasDataTarget {
     public TabListItem(final String text) {
         super(text);
         setDataToggle(Toggle.TAB);
+        // initial focus should be hidden from keyboard
+        setTabIndex(-1);
 
         Roles.getPresentationRole().set(getElement());
         Roles.getTabRole().set(anchor.getElement());
