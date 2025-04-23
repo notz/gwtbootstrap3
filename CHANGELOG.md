@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.7](https://github.com/notz/gwtbootstrap3/compare/v1.1.6...v1.1.7) (2025-04-23)
+
+
+### Bug Fixes
+
+* Add optional aria orientation setting to nav tabs ([#30](https://github.com/notz/gwtbootstrap3/issues/30)) ([57f7199](https://github.com/notz/gwtbootstrap3/commit/57f719962870a46dbc9fbbef98c6676ed931a651))
+
 ## [1.1.6](https://github.com/notz/gwtbootstrap3/compare/v1.1.5...v1.1.6) (2025-04-17)
 
 
