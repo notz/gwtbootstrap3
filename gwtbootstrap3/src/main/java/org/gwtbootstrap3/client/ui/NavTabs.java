@@ -20,6 +20,7 @@ package org.gwtbootstrap3.client.ui;
  * #L%
  */
 
+import com.google.gwt.aria.client.OrientationValue;
 import com.google.gwt.aria.client.Roles;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
@@ -34,5 +35,9 @@ public class NavTabs extends Nav {
         // Nav tab should not receive focus, only the individual active tab should
         getElement().setAttribute("tabindex", "-1");
         Roles.getTablistRole().set(getElement());
+    }
+
+    public void setAriaOrientation(OrientationValue orientation) {
+        Roles.getScrollbarRole().setAriaOrientationProperty(getElement(), orientation);
     }
 }
