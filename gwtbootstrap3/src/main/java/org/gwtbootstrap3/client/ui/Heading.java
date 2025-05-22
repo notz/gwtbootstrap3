@@ -80,8 +80,8 @@ import com.google.gwt.user.client.ui.HasWidgets;
  */
 public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEmphasis, HasAlignment, HasSubText {
 
-    private final Small subText = new Small();
     private final Text text = new Text();
+    private Small subText;
 
     /**
      * Creates a Heading with the passed in size.
@@ -125,6 +125,16 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
      */
     @Override
     public void setSubText(final String subText) {
+        if (subText == null || subText.isEmpty()) {
+            if (this.subText != null) {
+                remove(this.subText);
+                this.subText = null;
+            }
+            return;
+        }
+        if (this.subText == null) {
+            this.subText = new Small();
+        }
         // Force a space between the heading and the subText
         this.subText.setText(" " + subText);
         add(this.subText);
@@ -137,7 +147,10 @@ public class Heading extends ComplexWidget implements HasWidgets, HasText, HasEm
      */
     @Override
     public String getSubText() {
-        return subText.getText();
+        if (subText == null) {
+            return null;
+        }
+        return subText.getText().trim();
     }
 
     /**
