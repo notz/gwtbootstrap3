@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.8](https://github.com/notz/gwtbootstrap3/compare/v1.1.7...v1.1.8) (2025-05-22)
+
+
+### Bug Fixes
+
+* Correctly handle updating of sub text with an empty string ([#33](https://github.com/notz/gwtbootstrap3/issues/33)) ([b043bef](https://github.com/notz/gwtbootstrap3/commit/b043bef9a04a01cbb8a2fd2f6140069ae3984fc3))
+
 ## [1.1.7](https://github.com/notz/gwtbootstrap3/compare/v1.1.6...v1.1.7) (2025-04-23)
 
 
