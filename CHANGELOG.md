@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.9](https://github.com/notz/gwtbootstrap3/compare/v1.1.8...v1.1.9) (2025-06-05)
+
+
+### Bug Fixes
+
+* Set aria-hidden on empty alt text ([#36](https://github.com/notz/gwtbootstrap3/issues/36)) ([76c2633](https://github.com/notz/gwtbootstrap3/commit/76c263321b5b75cd58905eba86eb06fc860c878f))
+
 ## [1.1.8](https://github.com/notz/gwtbootstrap3/compare/v1.1.7...v1.1.8) (2025-05-22)
 
 
