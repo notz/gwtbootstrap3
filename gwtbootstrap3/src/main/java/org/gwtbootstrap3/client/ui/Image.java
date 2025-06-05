@@ -30,6 +30,7 @@ import org.gwtbootstrap3.client.ui.constants.ImageType;
 import org.gwtbootstrap3.client.ui.constants.Pull;
 import org.gwtbootstrap3.client.ui.constants.Styles;
 
+import com.google.gwt.aria.client.Roles;
 import com.google.gwt.resources.client.ImageResource;
 import com.google.gwt.safehtml.shared.SafeUri;
 
@@ -107,5 +108,16 @@ public class Image extends com.google.gwt.user.client.ui.Image implements HasTyp
     @Override
     public Pull getPull() {
         return pullMixin.getPull();
+    }
+
+    @Override
+    public void setAltText(final String altText) {
+        super.setAltText(altText);
+        // Set aria-hidden state based on alt text, some screen readers don't ignore empty alt texts
+        if (altText != null && altText.isEmpty()) {
+            Roles.getImgRole().setAriaHiddenState(getElement(), true);
+        } else {
+            Roles.getImgRole().removeAriaHiddenState(getElement());
+        }
     }
 }
