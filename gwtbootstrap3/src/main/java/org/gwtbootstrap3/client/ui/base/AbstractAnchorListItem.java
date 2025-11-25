@@ -68,16 +68,7 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
     /** {@inheritDoc} */
     @Override
     public HandlerRegistration addClickHandler(final ClickHandler handler) {
-        return anchor.addHandler(handler, ClickEvent.getType());
-    }
-
-    @Override
-    public void fireEvent(final GwtEvent<?> event) {
-        if (event instanceof ClickEvent) {
-            anchor.fireEvent(event);
-            return;
-        }
-        super.fireEvent(event);
+        return addHandler(handler, ClickEvent.getType());
     }
 
     /** {@inheritDoc} */
