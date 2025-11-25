@@ -20,6 +20,7 @@ package org.gwtbootstrap3.client.ui.base;
  * #L%
  */
 
+import com.google.gwt.event.shared.GwtEvent;
 import org.gwtbootstrap3.client.ui.Anchor;
 import org.gwtbootstrap3.client.ui.constants.BadgePosition;
 import org.gwtbootstrap3.client.ui.constants.IconFlip;
@@ -68,6 +69,15 @@ public abstract class AbstractAnchorListItem extends AbstractListItem implements
     @Override
     public HandlerRegistration addClickHandler(final ClickHandler handler) {
         return anchor.addHandler(handler, ClickEvent.getType());
+    }
+
+    @Override
+    public void fireEvent(final GwtEvent<?> event) {
+        if (event instanceof ClickEvent) {
+            anchor.fireEvent(event);
+            return;
+        }
+        super.fireEvent(event);
     }
 
     /** {@inheritDoc} */
