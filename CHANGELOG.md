@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.10](https://github.com/notz/gwtbootstrap3/compare/v1.1.9...v1.1.10) (2025-11-25)
+
+
+### Bug Fixes
+
+* Add click to abstract anchor list item ([#48](https://github.com/notz/gwtbootstrap3/issues/48)) ([25e5f62](https://github.com/notz/gwtbootstrap3/commit/25e5f6284248d219604296db083de33b5ee91aec))
+* **deps:** bump org.apache.maven.plugins:maven-compiler-plugin ([#44](https://github.com/notz/gwtbootstrap3/issues/44)) ([09a379c](https://github.com/notz/gwtbootstrap3/commit/09a379c75ff1274e2d4b205b3e29df13c83c69e6))
+* **deps:** bump org.apache.maven.plugins:maven-gpg-plugin ([#40](https://github.com/notz/gwtbootstrap3/issues/40)) ([3b3127b](https://github.com/notz/gwtbootstrap3/commit/3b3127b35b7a527c3ae74b3dd30c28e14faf57a4))
+* **deps:** bump org.apache.maven.plugins:maven-javadoc-plugin ([#43](https://github.com/notz/gwtbootstrap3/issues/43)) ([ea1f4ed](https://github.com/notz/gwtbootstrap3/commit/ea1f4edb2707bd7927393de0310511b24d1910a2))
+* **deps:** bump org.apache.maven.plugins:maven-surefire-plugin ([#42](https://github.com/notz/gwtbootstrap3/issues/42)) ([89f0b3f](https://github.com/notz/gwtbootstrap3/commit/89f0b3f82b95af49ea446a537346c0e20088d8ff))
+* **deps:** bump org.codehaus.mojo:license-maven-plugin ([#45](https://github.com/notz/gwtbootstrap3/issues/45)) ([d5b9e25](https://github.com/notz/gwtbootstrap3/commit/d5b9e25a9b1c33122515bd38553983dabbcdbcb7))
+* Fire click event on anchor ([#46](https://github.com/notz/gwtbootstrap3/issues/46)) ([07ed4dc](https://github.com/notz/gwtbootstrap3/commit/07ed4dcccbb80daddbf3a0292e8bce8758b212e9))
+
 ## [1.1.9](https://github.com/notz/gwtbootstrap3/compare/v1.1.8...v1.1.9) (2025-06-05)
 
 
