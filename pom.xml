@@ -77,7 +77,7 @@
         <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
         <maven-surefire-plugin.version>3.5.4</maven-surefire-plugin.version>
 
-        <gwt.version>2.12.2</gwt.version>
+        <gwt.version>2.13.0</gwt.version>
         <junit.version>4.13.2</junit.version>
     </properties>
 
